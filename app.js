@@ -11,8 +11,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //CONNECT MONGO DB
-// const mongooseConnectUrl = "";
-// mongoose.connect(mongooseConnectUrl);
+const mongooseConnectUrl =
+  "mongodb+srv://unblog:123@ubog.a3keuh7.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(mongooseConnectUrl);
 
 //error handling
 app.use((req, res, next) => {
