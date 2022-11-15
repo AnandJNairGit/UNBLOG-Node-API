@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 
 const mongoose = require("mongoose");
 
+const usersRoutes = require("./API/routes/users");
+
 app.use(morgan("dev"));
 app.use("/uploads", express.static("uploads"));
 app.use(bodyParser.urlencoded({ extended: true }));
