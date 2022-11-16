@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+require('dotenv').config()
+console.log()
 
 const mongoose = require("mongoose");
 
@@ -13,9 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //CONNECT MONGO DB
-const mongooseConnectUrl =
-  "mongodb+srv://unblog:123@ubog.a3keuh7.mongodb.net/?retryWrites=true&w=majority";
+const mongooseConnectUrl =process.env.MONGO_DB_URL;
 mongoose.connect(mongooseConnectUrl);
+
+
+
+app.use("/users", usersRoutes);
 
 //error handling
 app.use((req, res, next) => {
