@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { default: mongoose } = require("mongoose");
-const Users = require("../../models/user");
+const Users = require("../../models/users");
 
 const bcrypt = require("bcrypt");
 
@@ -45,3 +45,5 @@ router.post("/signup", async (req, res, next) => {
       });
     }
   });
+
+  module.exports = router;
