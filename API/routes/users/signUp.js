@@ -1,3 +1,8 @@
+const { default: mongoose } = require("mongoose");
+const Users = require("../../models/users");
+
+const bcrypt = require("bcrypt");
+
 const signup = async (req, res, next) => {
   //GET USER BY EMAIL ID
   const foundUser = await Users.find({ email: req.body.email });
