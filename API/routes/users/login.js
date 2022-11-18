@@ -19,7 +19,7 @@ const login = async (req, res, next) => {
           process.env.JWT_SECRET_KEY,
           { expiresIn: "1h" }
         );
-        res.status(200).json({ message: "login successfull",token:token });
+        res.status(200).json({ message: "login successfull", token: token });
       }
     });
   } else {
